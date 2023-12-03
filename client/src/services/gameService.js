@@ -1,17 +1,22 @@
 // creating a service layer - supposed to group the requests by resource, which we perform CRUD requests on
 
-import { request } from "../lib/request";
+import * as request from "../lib/request";
 const baseUrl = 'http://localhost:3030/jsonstore/games';
 
 // gets all games from the server:
 export const getAll = async () => {
-    const result = await request('GET', baseUrl);
 
-    console.log(result);
-
+    const result = await request.get(baseUrl);
     return Object.values(result);
 }
 
+export const create = async (gameData) => {
+    const result = await request.post(baseUrl, gameData);
+
+    return result;
+
+}
+/*
 export const create = async (gameData) => {
     const response = await fetch(baseUrl, {
         method: 'POST',
@@ -25,4 +30,4 @@ export const create = async (gameData) => {
     return result;
 
 }
- 
+*/
