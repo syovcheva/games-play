@@ -16,7 +16,7 @@ export default function GameCreate() {
         //     summary,
         // } = Object.fromEntries(new FormData(e.currentTarget));
 
-        // 2. create a service layer to send to server by creating a new folder
+        // 2. create a service layer to send to server by creating a new folder services
         console.log(gameData);
     }
 
